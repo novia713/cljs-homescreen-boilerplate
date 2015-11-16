@@ -32,23 +32,22 @@
 
     (last (clj->js (last (js->clj icons)))))
 
+; we print all out of «to-exclude» constant & Callscreen app
+(defn role-acceptable [e]
+  (if (= "Callscreen" e.name)
+   -1
+    (.indexOf (to-array to-exclude) e.role)
+  ))
 
 ; Renders the icon to the container like
 
 (defn render [e]
+  ;(js/console.log e.name " → " e.role " → " (role-acceptable e))
 
-  (def role-acceptable
-    (if (= "Callscreen" e.name)
-      -1
-      (.indexOf (to-array to-exclude) e.role)
-    ))
-
-  ;(js/console.log e.name " → " e.role " → " role-acceptable)
-  (if (> 0 role-acceptable)
+  (if (> 0 (role-acceptable e))
    (do
     (let [tile (.createElement js/document "DIV") link (.createElement js/document "A")]
       ;(set! (.-innerHTML tile) e.name) ;uncomment to display the app name
-      ;(set! (.-className tile) e.role)
       (set! (.-className tile) "tile")
 
       (set! (.-background (.-style tile)) (apply str "orange url(" e.origin (get-bigger-icon e.icons) ") center/99% no-repeat"))
