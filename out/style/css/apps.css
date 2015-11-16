@@ -1,0 +1,24 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    background: black;
+}
+
+#apps {
+    overflow-y: scroll;
+}
+
+.tile {
+    display: inline-block;
+    height: 68px;
+    width: 22%;
+    padding: 4%;
+    margin: 4px 4px;
+    text-align: right;
+    float: left;
+    line-height: 220px;
+    border-radius: 50%;
+}

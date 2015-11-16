@@ -1,0 +1,26 @@
+{
+    "name": "CLJS Homescreen Boilerplate Express",
+   "version": "0.1",
+   "description": "a boilerplate to build Homescreens in Clojurescript",
+   "launch_path": "/index.html",
+   "permissions": {
+ },
+   "developer": {
+     "name": "Leandro Vázquez Cervantes",
+     "url": "http://leandro.vc"
+   },
+ "icons": {
+     "16": "style/icons/cljs-homescreen-16.png",
+     "30": "style/icons/cljs-homescreen-30.png",
+     "32": "style/icons/cljs-homescreen-32.png",
+     "48": "style/icons/cljs-homescreen-48.png",
+     "60": "style/icons/cljs-homescreen-60.png",
+    "128": "style/icons/cljs-homescreen-1288.png"
+ },
+ "type":"certified",
+ "role":"homescreen",
+ "permissions":{
+      "webapps-manage":{
+      }
+ }
+}
